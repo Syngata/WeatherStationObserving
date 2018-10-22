@@ -1,15 +1,15 @@
 
 public class Mobitel implements Observer, Display {
 	
-	WeatherStationObs wthStation;
+	Stanje st;
 	private float temp;
 	private float hum;
 	private float press;
 	
 	
-	public Mobitel(WeatherStationObs wthStation) {
+	public Mobitel() {
 		
-		this.wthStation=wthStation;
+		 
 		
 		// TODO Auto-generated constructor stub
 	}
@@ -23,14 +23,16 @@ public class Mobitel implements Observer, Display {
 		System.out.println("Hummidity: "+ hum);
 		System.out.println("Preassure: "+ press);
 		
+		
+		
 	}
 
 	@Override
-	public void update() {
+	public void update(Stanje st) {
 		// TODO Auto-generated method stub
-		this.temp=wthStation.getTemp();
-		this.hum=wthStation.getHum();
-		this.press=wthStation.getPress();
+		this.temp=st.getTemp();
+		this.hum=st.getHum();
+		this.press=st.getPress();
 		display();
 	}
 

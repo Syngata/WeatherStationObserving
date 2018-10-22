@@ -1,7 +1,7 @@
 
 public class PCObs implements Observer, Display {
 	
-	WeatherStationObs wthStation;
+
 	private float temp;
 	private float hum;
 	private float press;
@@ -11,11 +11,11 @@ public class PCObs implements Observer, Display {
 	private float pressAvg;
 	
 	
-	public PCObs(WeatherStationObs wthStation){ 
-		// TODO Auto-generated constructor stub
+	public PCObs(){ 
+	
 	
 		
-		this.wthStation=wthStation;
+	
 		
 		// TODO Auto-generated constructor stub
 	}
@@ -34,11 +34,11 @@ public class PCObs implements Observer, Display {
 	}
 
 	@Override
-	public void update() {
+	public void update(Stanje st) {
 		// TODO Auto-generated method stub
-		this.temp=wthStation.getTemp();
-		this.hum=wthStation.getHum();
-		this.press=wthStation.getPress();
+		this.temp=st.getTemp();
+		this.hum=st.getHum();
+		this.press=st.getPress();
 		counter++;
 		tempAvg+=temp;
 		humAvg+=hum;

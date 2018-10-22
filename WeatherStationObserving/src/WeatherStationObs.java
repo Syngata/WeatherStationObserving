@@ -1,7 +1,8 @@
 import java.util.ArrayList;
 
 public class WeatherStationObs implements Observable {
-
+	
+	
 	private ArrayList<Observer> observers;
 	private float temp;
 	private float hum;
@@ -27,9 +28,13 @@ public class WeatherStationObs implements Observable {
 	@Override
 	public void notifyObs() {
 		// TODO Auto-generated method stub
+		Stanje st = new Stanje(this);
+		st.update(st);
+		
 		for(Observer obs:observers) {
-			obs.update();
+			obs.update(st);
 		}
+		
 	}
 
 	public ArrayList<Observer> getObservers() {
