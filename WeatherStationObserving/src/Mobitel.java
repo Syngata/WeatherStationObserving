@@ -18,6 +18,7 @@ public class Mobitel implements Observer, Display {
 	@Override
 	public void display() {
 		// TODO Auto-generated method stub
+		System.out.println("MOBILE DATA");
 		System.out.println("Temp: "+temp);
 		System.out.println("Hummidity: "+ hum);
 		System.out.println("Preassure: "+ press);
